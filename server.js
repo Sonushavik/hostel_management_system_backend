@@ -11,10 +11,25 @@ const app = express();
 
 const PORT = process.env.PORT || 8080
 
-app.use(cors({
-        origin: "http://localhost:5173", 
-        // credentials: true // if you're using cookies
-}))
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://hostel-management-system-frontend.vercel.app",
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  credentials: true, 
+};
+
+app.use(cors(corsOptions));
+
 
 app.use(express.json())
 app.use("/api/auth",authRoute );

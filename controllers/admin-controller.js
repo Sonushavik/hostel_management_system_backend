@@ -48,7 +48,7 @@ const getApplicationById = async(req,res,next) =>  {
         try {
                 const id = req.params.id;
                 console.log(id);
-                const applicationData =await ApplicationForm.findById(id);
+                const applicationData =await ApplicationForm.findOne({userId: id});
                 if(!applicationData){
                         res.status(404).json({message: "application not found!!"})
                 }
@@ -75,7 +75,6 @@ const updateApplication = async(req,res,next) => {
                         return res.status(404).json({message: "Application not found!"});
                 }
                 res.status(200).json(updatedApplication);
-                next();
         } catch (error) {
                 console.log(error)
                 next(error);
@@ -87,7 +86,6 @@ const deleteUser = async(req,res,next) => {
                 const userId = req.params.userId;
                 const deleteuser = await User.findByIdAndDelete(userId);
                 res.status(200).json({message: "user deleted successfully!!"})
-                next();
         } catch (error) {
                 console.log(error);
                 next(error)

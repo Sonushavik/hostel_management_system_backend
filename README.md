@@ -4,13 +4,7 @@ A modern web-based **Hostel Management System** built with a focus on efficiency
 
 ---
 
-## 🌐 Live Demo
-
-Check out the live version here:
-
-<iframe src="https://www.linkedin.com/posts/sonushavik_hostelmanagementsystem-adminpanel-studentportal-activity-7336776001156255744-1OKG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ6PfsBb-8jW85Vemv30J-dtmrMOoqaG14" width="100%" height="600px" frameborder="0"></iframe>
-
-Or open directly:  
+open directly:  
 🔗 https://hostel-management-system-frontend.vercel.app/
 
 ---

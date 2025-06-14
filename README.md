@@ -40,3 +40,7 @@ open directly:
 cd backend
 npm install
 npm start
+
+
+## checkout jkt hostel documentation
+https://documenter.getpostman.com/view/39027982/2sB2x6nsUS
